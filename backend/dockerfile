@@ -13,17 +13,14 @@ RUN npm install
 # Copy the rest of the application code to the working directory
 COPY . .
 
-# Copy the .env file from backend directory
-COPY .env .env
 
-# Set environment variables inside the Docker container
-ENV MONGODB_URL=mongodb+srv://myasiransari16:UE0onBmoLOkyzR24@cluster0.v9m12.mongodb.net/Chatty
-ENV JWT_SECRET=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
-ENV frontendURL=
+
+
 
 
 # Expose the port the app runs on
 EXPOSE 5000
 
 # Start the application (fix the path issue)
-CMD ["node", "server.js"]
+CMD ["sh", "-c", "node server.js"]
+
